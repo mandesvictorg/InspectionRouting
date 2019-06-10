@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Maven Pro" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFm1AqAIIopXCIB0Ei9GlRvsa80imPi20"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+    <title>Accela Inspection Routing</title>
+</head>
+
+<body onload="initialize()">
+    <h3>Manatee County - Accela Inspection Routing<img src="../logo/76x68 CoA BW Logo.jpg" style="float:right;width:100px;height:34px;"></h3>
+    <!--Form-->
+    <form id="form">
+            <label for="searchInspector">Inspector User ID</label>
+            <input class="u-full-width" type="text" id="searchInspector" name="searchInspector" autofocus>
+            
+        <div class="row">
+            <div class="two columns">
+                <label for="searchStartDate">Start Scheduled Date</label>
+                <input type="date" id="searchStartDate" name="searchStartDate">
+            </div>
+            <div class="two columns">
+                <label for="searchEndDate">End Scheduled Date</label>
+                <input type="date" id="searchEndDate" name="searchEndDate">
+            </div>
+        </div>
+            <div>
+                <br /><br />
+                <button type="submit" id="submitButton">Search</button>
+                <button type="reset" id="clearButton">Clear</button>
+            </div>
+    </form>
+
+
+<style>
+
+
+#map-canvas {
+  height: 425px;
+}
+
+
+#right-panel {
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+
+
+#right-panel select {
+  width: 100%;
+}
+
+#right-panel {
+  height: 100%;
+  float: left;
+  width: 390px;
+  overflow: auto;
+  padding: 0;
+  margin: 0 20px 45px 0;
+}
+
+
+
+@media print {
+  #map-canvas {
+    height: 500px;
+    margin: 0;
+  }
+  #right-panel {
+    float: none;
+    width: auto;
+  }
+}
+
+#directions-panel {
+    display: block;
+    clear: both;
+    margin-top: 20px;
+}
+</style>
+    <!--Table-->
+    <div class="w3-container" id="tableSection">
+        <div class="inspectionTableContainer table-bordered table-striped" id="inspectionTableContainer">
+            <table class="inspectionTable" id="inspectionTable">
+                <col width="150"> <col width="150"> <col width="300"> <col width="150"> <col width="150"> <col width="150">
+                <thead>
+                    <tr>
+                        <th>Permit</th>
+                        <th>Type</th>
+                        <th>Address</th>
+                        <th>Scheduled Date</th>
+                        <th>Status</th>
+                        <th>Inspector</th>
+                    </tr>
+                </thead>
+                <tbody id="inspectionTableBody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div id="mapSection" class="mapSection">
+
+<div id="right-panel"></div>
+
+
+        <div id="map-canvas">
+        </div>
+
+
+      <div id="directions-panel">
+        </div> 
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    font-family: "Maven Pro";
+    width: 80%;
+    margin: 2em auto 0 auto;
+}
+
+a:link {
+    color: rgb(35, 35, 116);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: rgb(61, 27, 78);
+    text-decoration: none;
+}
+
+tr:nth-child(even) {
+    background-color: #d5d7ee;
+}
+
+th {
+    color: black;
+    background-color: #d5d7ee;
+    padding: 0.3em;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+table {
+    color: black;
+    width: 100%;
+    padding: 0.3em;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.mapSection {
+    height: 500px;
+    width: 809px;
+    position: relative;
+}
